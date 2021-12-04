@@ -16,6 +16,22 @@ namespace AsyncTest
             Console.WriteLine("Last Main Line");
             Console.Read();
         }
+
+        private static void PseudoLoad()
+        {
+            /*
+             * Click an unloaded organization
+             * Set selection_changed event to async method? Can this be done? If not, set up a sub-method that is async
+             * await async method LoadTable() sub-method
+             * LoadTable() will run Verify in series on its Thread
+             * The Main/UI thread will not be blocked now
+             * Push SetProgress updates to the progress bar with invoke to set the boh property & still invalidate to update the visual?
+             * Update the categories once they're available -- requires invoke?
+             * Task.WaitAll() to block Insert_Multiplier code execution until all the data is loaded
+             * How can I WaitAll() in the other event? Create handles for the load tasks as Form properties?
+             */
+        }
+
         private static async Task RunTests()
         {
             //Use async method for methods you want to run as though they're on a separate thread.
